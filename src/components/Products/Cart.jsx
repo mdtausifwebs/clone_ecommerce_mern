@@ -9,7 +9,6 @@ const Cart = () => {
     const [data, setdata] = useState([])
     let cartPrice = JSON.parse(localStorage.getItem("cartPrice"))
     let totalPrice = JSON.parse(localStorage.getItem("totalPrice"))
-
     useEffect(() => {
         setdata(JSON.parse(localStorage.getItem("cart")))
     }, [])
@@ -19,7 +18,7 @@ const Cart = () => {
         localStorage.setItem("cartPrice", JSON.stringify(cartPrice - id.selling_price))
         let product = data.filter((item) => {
             // console.log(item)
-            return item._id != id._id;
+            return item._id !== id._id;
         })
         setdata(product)
         localStorage.setItem("cart", JSON.stringify(product))

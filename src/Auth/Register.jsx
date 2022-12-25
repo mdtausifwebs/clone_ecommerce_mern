@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {Link} from "react-router-dom"
 import { Registeruser } from "../redux/action/UserAction";
 const Register = () => {
@@ -7,7 +7,7 @@ const Register = () => {
   const [email, setemail] = useState();
   const [password, setpassword] = useState();
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  // const state = useSelector((state) => state);
   // console.log("state", state);
   const submit = async () => {
     const user = {
@@ -17,6 +17,7 @@ const Register = () => {
     };
     await dispatch(Registeruser(JSON.stringify(user)));
   };
+
   return (
     <div>
       <div>

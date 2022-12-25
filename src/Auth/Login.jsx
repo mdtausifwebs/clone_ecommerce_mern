@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {Loginruser} from "../redux/action/UserAction"
 const Login = () => {
   const [email, setemail] = useState();
   const [password, setpassword] = useState();
   const dispatch=useDispatch()
-  const state=useSelector((state)=>state)
+  // const state=useSelector((state)=>state)
   // console.log('state', state);
   const submit = async () => {
     const user = {
@@ -17,6 +17,7 @@ const Login = () => {
     await dispatch(Loginruser(JSON.stringify(user)))
     // console.log(user);
   };
+
   return (
     <div>
       <div>

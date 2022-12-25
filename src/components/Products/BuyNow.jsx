@@ -14,7 +14,7 @@ const BuyNow = () => {
     const [pin, setpin] = useState()
     const [temp, settemp] = useState(false)
     const [selectedadd, setselectedadd] = useState()
-    console.log(selectedadd)
+    console.log(selectedadd,temp)
     const fulladdress = JSON.parse(localStorage.getItem("address")) || []
     const submit = () => {
         if (!name || !mobile || !email || !address || !city || !state || !pin) {

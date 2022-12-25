@@ -19,6 +19,7 @@ const Details = () => {
         getdata()
     }, [id, dispatch])
 
+
     useEffect(() => {
         if (temp) {
             setTimeout(() => {

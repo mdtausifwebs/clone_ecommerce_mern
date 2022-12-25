@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProductdata } from "../../redux/action/ProductAction";
 import productcatecss from "../../styles/product/productCategory.module.css"
-import Sidebar from "./Sidebar"
+// import Sidebar from "./Sidebar"
 import { useEffect } from "react";
 import Product from "./Product";
 const ProductCategory = () => {
