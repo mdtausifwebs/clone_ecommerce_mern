@@ -1,0 +1,267 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 3rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    bottom: 5rem;
+    background-color: white;
+
+    z-index: 1;
+  }
+  .childContainer {
+    width: 100%;
+    padding: 0 0.5rem 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logoSec {
+    width: 8%;
+    display: flex;
+  }
+  .logoSec img {
+    width: 60%;
+  }
+  .manuSec {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .manuchild {
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+  }
+  .searchSec {
+    width: 16%;
+    border: 1px solid rgb(237, 233, 233);
+    display: flex;
+  }
+  .searchSec input {
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+  }
+  .searchSec i {
+    padding-top: 0.5rem;
+  }
+  .loginSec {
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .cartIcon {
+    position: relative;
+  }
+  .cartIcon p {
+    position: absolute;
+    top: -30px;
+    right: 5px;
+  }
+  .loginIcon a,
+  .cartIcon a {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .loginIcon span,
+  .cartIcon span {
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .loginIcon i,
+  .cartIcon i {
+    font-size: 20px;
+  }
+  /*  */
+  .topwear,
+  .botomwear,
+  .cosmetic,
+  .footwear,
+  .drapes,
+  .wishful,
+  .store {
+    display: none;
+  }
+  .topwearLink,
+  .botomwearLink,
+  .cosmeticLink,
+  .footwearLink,
+  .drapesLink,
+  .wishfulLink,
+  .storeLink {
+    display: flex;
+    flex-direction: column;
+    width: 160%;
+    padding: 10px 2px 10px 0px;
+    background-color: transparent;
+    background-color: #bab7b7;
+    margin-top: 10px;
+  }
+  .topwearLink a,
+  .botomwearLink a,
+  .cosmeticLink a,
+  .footwearLink a,
+  .drapesLink a,
+  .wishfulLink a,
+  .storeLink a {
+    font-size: 12px;
+    width: 100%;
+    padding: 10px;
+  }
+  .topwearLink span,
+  .botomwearLink span,
+  .cosmeticLink span,
+  .footwearLink span,
+  .drapesLink span,
+  .wishfulLink span,
+  .storeLink span {
+    width: 100%;
+  }
+  .hovertopwear {
+    position: relative;
+  }
+  .manuchild:hover .topwear {
+    position: absolute;
+    top: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .manuchild:hover .botomwear {
+    display: flex;
+    position: absolute;
+    top: 10px;
+  
+    flex-direction: column;
+    z-index: 1;
+  }
+  .manuchild:hover .cosmetic {
+    display: flex;
+    position: absolute;
+    top: 10px;
+  
+    flex-direction: column;
+    z-index: 1;
+  }
+  .manuchild:hover .footwear {
+    display: flex;
+    position: absolute;
+    top: 10px;
+  
+    flex-direction: column;
+    z-index: 1;
+  }
+  .manuchild:hover .drapes {
+    display: flex;
+    position: absolute;
+    top: 10px;
+  
+    flex-direction: column;
+    z-index: 1;
+  }
+  .manuchild:hover .wishful {
+    display: flex;
+    position: absolute;
+    top: 10px;
+  
+    flex-direction: column;
+    z-index: 1;
+  }
+  .manuchild:hover .store {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .bergarmenu {
+    display: none;
+  }
+  .loginIcon {
+    position: relative;
+  }
+  .subloginsec {
+    display: none;
+  }
+  
+  .loginIcon:hover .subloginsec {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    right: 1px;
+    top: 20px;
+  }
+  .subloginchild {
+    padding: 20px;
+  }
+  @media only screen and (max-width: 400px) {
+    .childContainer {
+      width: 100%;
+      position: relative;
+    }
+    .logoSec {
+      width: 20%;
+    }
+  
+    .logo {
+      width: 50px;
+    }
+    .manuSec {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: -50px;
+      z-index: 1;
+    }
+    .searchSec {
+      width: 50%;
+      display: flex;
+      border: 1px solid rgb(179, 179, 179);
+    }
+  
+    .searchSec input {
+      width: 90%;
+    }
+    .searchSec i {
+      padding-top: 5px;
+      width: 10%;
+    }
+    .loginSec {
+      width: 30%;
+    }
+    .bergarmenu {
+      display: flex;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 800px) {
+    /* .manuSec {
+        display: none;
+      }
+      .searchSec {
+        width: 30%;
+        background-color: rgb(218, 213, 213);
+        display: flex;
+      }
+      .searchSec input {
+        width: 100%;
+      }
+      .searchSec i {
+        font-size: 25px;
+      }
+      .bergarmenu {
+        display: block;
+      } */
+  }
+  

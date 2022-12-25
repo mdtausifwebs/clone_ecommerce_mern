@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+}
+.box {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+.box img{
+  max-width: 98%;
+  max-height: 90%;
+}
+.leftIcon {
+  position: absolute;
+  top: 12rem;
+  left: 1rem;
+  font-size: 4rem;
+  cursor: pointer;
+  display: none;
+}
+.rightIcon {
+  display: none;
+  position: absolute;
+  top: 12rem;
+  right: 1rem;
+  font-size: 4rem;
+  cursor: pointer;
+}
+.box:hover svg{
+    display: flex;
+    color: rgb(129, 129, 129);
+    
+}
