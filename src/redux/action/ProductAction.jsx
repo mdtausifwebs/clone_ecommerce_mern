@@ -105,11 +105,11 @@ export const SearchAction = (search) => async (dispatch) => {
         },
       }
     );
-    // console.log(data.product)
-    // dispatch({
-    //   type: "SearchProductSuccess",
-    //   payload: data.product,
-    // });
+    console.log(data.product)
+    dispatch({
+      type: "SearchProductSuccess",
+      payload: data.product,
+    });
   } catch (err) {
     dispatch({
       type: "SearchProductFail",
