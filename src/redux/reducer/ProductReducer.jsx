@@ -8,6 +8,7 @@ export const productReducer = createReducer(initialstate, {
   getproductSuccess: (state, action) => {
     state.loading = false;
     state.Products = action.payload;
+    state.FilterProducts = action.payload;
   },
   getproductFail: (state, action) => {
     state.loading = true;
@@ -49,5 +50,8 @@ export const productReducer = createReducer(initialstate, {
   SearchProductFail: (state, action) => {
     state.loading = true;
     state.error = action.payload;
+  },
+  setFilterProducts: (state, action) => {
+    state.FilterProducts = action.payload;
   },
 });

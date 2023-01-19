@@ -66,14 +66,14 @@ const Details = () => {
                 <img src={productdata?.gallery[index].image} alt="" onMouseOut={() => setemp(false)} onMouseOver={() => setemp(true)} />
             </div>
             <div className={detailscss.detailspro}>
-                <h3>{productdata?.name}</h3>
-                <h3>{productdata?.neck}</h3>
-                <h3>{productdata?.category}</h3>
-                <h3>{productdata?.description}</h3>
-                <h3>{productdata?.price}</h3>
-                <h3>{productdata?.selling_price}</h3>
-                <h3>{productdata?.discount}</h3>
-                <div className={detailscss.SizeSec}>
+                <h3>Name:- {productdata?.name}</h3>
+                <h3>Neck Type:- {productdata?.neck}</h3>
+                <h3>Category:-  {productdata?.category}</h3>
+                <h3>Description:- {productdata?.description}</h3>
+                <h3>Price:- {productdata?.price}</h3>
+                <h3>Selling Price:- {productdata?.selling_price}</h3>
+                <h3>Discount:-  {productdata?.discount}%</h3>
+                <div className={detailscss.SizeSec}> Size:- 
                     {
                         productdata?.size?.split("]").join("").split("[").join("").split(",").map((item, i) => {
                             return <button key={i} onClick={() => itemSize(item)}>{item}</button>

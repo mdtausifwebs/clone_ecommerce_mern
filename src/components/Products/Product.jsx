@@ -1,22 +1,22 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import productcss from "../../styles/product/product.module.css"
-const Product = () => {
-  const { Products, loading } = useSelector((state) => state?.Products);
+const Product = ({FilterProducts,loading}) => {
   const [data, setdata] = useState([])
   const [currentpage, setCurrentpage] = useState(1)
   const [perPageSize] = useState(10)
-  // console.log(Products, loading)
   const indexLast = currentpage * perPageSize
   const indexFirst = indexLast - perPageSize
   useEffect(() => {
     if (!loading) {
-      setdata(Products?.slice(indexFirst, indexLast))
+      setdata(FilterProducts
+        ?.slice(indexFirst, indexLast))
     }
-  }, [currentpage, Products, indexFirst, indexLast, loading])
+  }, [currentpage, FilterProducts
+    , indexFirst, indexLast, loading])
   const pagesize = (text) => {
     if (text === "Pre") {
       setCurrentpage(currentpage - 1)
@@ -25,28 +25,31 @@ const Product = () => {
     }
   }
   const SortingHandler = (sortingType) => {
-    if(sortingType==="lowtohigh"){
-      const SortArr = [...Products].sort((a, b) => {
+    if (sortingType === "lowtohigh") {
+      const SortArr = [...FilterProducts
+      ].sort((a, b) => {
         return a.selling_price - b.selling_price
       })
       setdata(SortArr)
-      console.log(SortArr)
-    }else if(sortingType==="hightolow"){
-      const SortArr = [...Products].sort((a, b) => {
+      // console.log(SortArr)
+    } else if (sortingType === "hightolow") {
+      const SortArr = [...FilterProducts
+      ].sort((a, b) => {
         return b.selling_price - a.selling_price
       })
       setdata(SortArr)
-      console.log(SortArr)
+      // console.log(SortArr)
     }
   }
   return <div className={productcss.container}>
     <div className={productcss.itemSize}>
-      <div className={productcss.totalItem}>{`Total Items ${Products?.length}`}</div>
+      <div className={productcss.totalItem}>{`Total Items ${FilterProducts
+        ?.length}`}</div>
       <div className={productcss.Sorting}>
         <select name="sorting" id="sorting" onChange={(e) => SortingHandler(e.target.value)}>
-          <option value="">chose</option>
-          <option value="lowtohigh"> low to high </option>
-          <option value="hightolow"> high to low</option>
+          <option value="">Chose</option>
+          <option value="lowtohigh"> Low to High </option>
+          <option value="hightolow"> High to Low</option>
         </select>
       </div>
     </div>

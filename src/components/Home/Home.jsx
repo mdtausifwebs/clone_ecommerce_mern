@@ -10,8 +10,6 @@ const Home = () => {
         <div className={homecss.slideSec}>
           <Slider slider={data.slider} />
         </div>
-        
-
         <div className={homecss.categoryImeParent}>
           <div className={homecss.categoryIme}>
             {data?.categoryurl?.map((item, i) => {

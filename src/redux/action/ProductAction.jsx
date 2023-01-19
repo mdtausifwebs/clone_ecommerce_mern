@@ -27,7 +27,12 @@ export const getProductdata = (body) => async (dispatch) => {
     });
   }
 };
-
+export const setFilterProducts = (data) => (dispatch) => {
+  dispatch({
+    type: "setFilterProducts",
+    payload: data
+  });
+}
 
 export const getproductdetails = (id) => async (dispatch) => {
   try {
