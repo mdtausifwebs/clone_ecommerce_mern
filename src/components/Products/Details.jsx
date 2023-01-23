@@ -11,7 +11,8 @@ const Details = () => {
     const id = useParams().id
     const [index, setindex] = useState(0)
     const [temp, setemp] = useState(false)
-    const productdata = useSelector((state) => state?.Products?.Product?.product[0]);
+    const productdata = useSelector((state) => state?.Products?.Product);
+    // console.log(productdata,id)
     useEffect(() => {
         const getdata = async () => {
             await dispatch(getproductdetails(id))

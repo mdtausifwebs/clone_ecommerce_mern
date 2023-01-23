@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {Link} from "react-router-dom"
-import { Registeruser } from "../redux/action/UserAction";
+import { Link } from "react-router-dom"
+import { Registeruser,GoogleRegister } from "../redux/action/UserAction";
+import { GoogleLogin } from "@react-oauth/google"
+import jwtDecode from "jwt-decode"
 const Register = () => {
   const [name, setname] = useState();
   const [email, setemail] = useState();
@@ -17,6 +19,14 @@ const Register = () => {
     };
     await dispatch(Registeruser(JSON.stringify(user)));
   };
+  const LogSuccess = async (inputs) => {
+    let googleLogin = jwtDecode(inputs.credential)
+    await dispatch(GoogleRegister(googleLogin));
+  }
+  const LogError = (inputs) => {
+    console.log(inputs)
+
+  }
 
   return (
     <div>
@@ -44,6 +54,9 @@ const Register = () => {
         <div>
           <button onClick={submit}>Register</button>
           <button><Link to="/Login">Login</Link></button>
+        </div>
+        <div>
+          <GoogleLogin onSuccess={LogSuccess} onError={LogError} />
         </div>
       </div>
     </div>

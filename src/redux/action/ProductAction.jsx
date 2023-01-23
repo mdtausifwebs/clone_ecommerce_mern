@@ -2,20 +2,17 @@ import axios from "axios";
 
 export const getProductdata = (body) => async (dispatch) => {
   try {
-    // console.log(body)
+    // console.log("action", body)
     dispatch({
       type: "getproductRequest",
     });
-    let { data } = await axios.post(
-      `http://localhost:4000/api/v1/product/category`,
-      body,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+    // let { data } = await axios.get(
+    //   `http://localhost:4000/api/v1/products?category=${body.category}&size=${body.size}&page=${body.page}`
+    // );
+    let { data } = await axios.get(
+      `https://bright-cap-deer.cyclic.app/api/v1/products?category=${body.category}&size=${body.size}&page=${body.page}`
     );
-    // console.log(data.product.length)
+    // console.log("data.product action",data)
     dispatch({
       type: "getproductSuccess",
       payload: data.product,
@@ -27,13 +24,6 @@ export const getProductdata = (body) => async (dispatch) => {
     });
   }
 };
-export const setFilterProducts = (data) => (dispatch) => {
-  dispatch({
-    type: "setFilterProducts",
-    payload: data
-  });
-}
-
 export const getproductdetails = (id) => async (dispatch) => {
   try {
     // console.log(id)
@@ -41,12 +31,11 @@ export const getproductdetails = (id) => async (dispatch) => {
       type: "getproductRequestdetails",
     });
     let { data } = await axios.get(
-      `http://localhost:4000/api/v1/product/${id}`
+      `https://bright-cap-deer.cyclic.app/api/v1/product/${id}`
     );
-    // console.log(data)
     dispatch({
       type: "getproductSuccessdetails",
-      payload: data,
+      payload: data.product,
     });
   } catch (err) {
     dispatch({
@@ -55,6 +44,44 @@ export const getproductdetails = (id) => async (dispatch) => {
     });
   }
 };
+export const setFilterPrice = (body) => async (dispatch) => {
+  // let { data } = await axios.get(
+  //   `http://localhost:4000/api/v1/products/filterPrice?category=${body.category}&price=${body.price}&size=${body.size}&page=${body.page}`
+  // );
+  let { data } = await axios.get(
+    `https://bright-cap-deer.cyclic.app/api/v1/products/filterPrice?category=${body.category}&price=${body.price}&size=${body.size}&page=${body.page}`
+  );
+  dispatch({
+    type: "setFilterProducts",
+    payload: data.products
+  });
+}
+export const filterDiscount = (body) => async (dispatch) => {
+  // let { data } = await axios.get(
+  //   `http://localhost:4000/api/v1/products/filterdiscount?category=${body.category}&discount=${body.discount}&size=${body.size}&page=${body.page}`
+  // );
+  // console.log("action", data)
+  let { data } = await axios.get(
+    `https://bright-cap-deer.cyclic.app/api/v1/products/filterdiscount?category=${body.category}&discount=${body.discount}&size=${body.size}&page=${body.page}`
+  );
+  dispatch({
+    type: "setFilterProducts",
+    payload: data.products
+  });
+}
+export const setFiltersubCategory = (body) => async (dispatch) => {
+  let { data } = await axios.get(
+    `http://localhost:4000/api/v1/products/filtersubcategory?category=${body.category}&discount=${body.subcategory}&size=${body.size}&page=${body.page}`
+  );
+  console.log("action", data)
+  // let { data } = await axios.get(
+  //   `https://bright-cap-deer.cyclic.app/api/v1/products/filterPrice?sort=${body.text}&size=${body.size}&page=${body.page}`
+  // );
+  dispatch({
+    type: "setFilterProducts",
+    payload: data.products
+  });
+}
 export const addToCart = (cartProduct) => async (dispatch) => {
   try {
     dispatch({

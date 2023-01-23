@@ -41,7 +41,6 @@ const Sidebar = ({ SortingProduct, discountPrice,necktype,patterntype,sleevetype
               <div onClick={() => discountPrice("40")} >Discount 40%</div>
               <div onClick={() => discountPrice("50")} >Discount 50%</div>
               <div onClick={() => discountPrice("60")} >Discount 60%</div>
-              <div onClick={() => discountPrice("70")} >Discount 70%</div>
             </div> : null
           }
         </div>
