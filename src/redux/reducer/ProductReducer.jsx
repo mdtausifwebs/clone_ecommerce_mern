@@ -8,7 +8,7 @@ export const productReducer = createReducer(initialstate, {
   getProductdataSuccess: (state, action) => {
     state.loading = false;
     state.Products = action.payload;
-    state.FilterProducts = action.payload;
+    // state.FilterProducts = action.payload;
   },
   getProductdataFaild: (state, action) => {
     state.loading = true;

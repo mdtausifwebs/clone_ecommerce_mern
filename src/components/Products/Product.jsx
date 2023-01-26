@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import productcss from "../../styles/product/product.module.css"
 import Loader from "../Loader";
-const Product = ({ FilterProducts, loading, SortingHandler, pagesizeHandler, page }) => {
+const Product = ({ Products, loading, SortingHandler, pagesizeHandler, page }) => {
   return <div className={productcss.container}>
     {
       loading ?
         <Loader />
         : <>
           <div className={productcss.itemSize}>
-            <div className={productcss.totalItem}>{`Total Items ${FilterProducts
+            <div className={productcss.totalItem}>{`Total Items ${Products
               ?.length}`}</div>
             <div className={productcss.Sorting}>
               <select name="sorting" id="sorting" onChange={(e) => SortingHandler(e.target.value)}>
@@ -21,7 +21,7 @@ const Product = ({ FilterProducts, loading, SortingHandler, pagesizeHandler, pag
           </div>
           <div className={productcss.childContainer}>
             {
-              FilterProducts?.map((item, i) => {
+              Products?.map((item, i) => {
                 // console.log(item)
                 return (
                   <Link to={`/product/${item._id}`} key={i} className={productcss.productBox}>

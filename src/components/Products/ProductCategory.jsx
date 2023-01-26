@@ -8,8 +8,8 @@ import Product from "./Product";
 import { useSelector } from "react-redux"
 import { setFilterPrice, getProductdata, filterDiscount, setFiltersubCategory, SortByprice } from "../../redux/action/ProductAction"
 const ProductCategory = () => {
-  const { FilterProducts, loading } = useSelector((state) => state?.Products);
-  // console.log(Products,FilterProducts)
+  const { Products, loading } = useSelector((state) => state?.Products);
+  console.log(Products)
   const dispatch = useDispatch();
   const category = useParams().category
   const [page, setpage] = useState(1)
@@ -44,7 +44,7 @@ const ProductCategory = () => {
     //   return item.pattern === text
     //   // console.log(item.pattern)
     // })
-    // dispatch(setFilterProducts(patterndata))
+    // dispatch(setProducts(patterndata))
     // console.log("patterndata", patterndata)
   }
   const sleevetype = (text) => {
@@ -52,7 +52,7 @@ const ProductCategory = () => {
     //   return item.sleeve === text
     //   // console.log(item.sleeve)
     // })
-    // dispatch(setFilterProducts(sleevedata))
+    // dispatch(setProducts(sleevedata))
     // console.log("sleevedata", sleevedata)
   }
   const SortingHandler = async (sortType) => {
@@ -63,7 +63,7 @@ const ProductCategory = () => {
   return <div className={productcatecss.container}>
     <div className={productcatecss.box}>
       <Sidebar SortingProduct={SortingProduct} discountPrice={discountPrice} necktype={necktype} patterntype={patterntype} sleevetype={sleevetype} />
-      <Product FilterProducts={FilterProducts} loading={loading} page={page} pagesizeHandler={pagesizeHandler} SortingHandler={SortingHandler} />
+      <Product Products={Products} loading={loading} page={page} pagesizeHandler={pagesizeHandler} SortingHandler={SortingHandler} />
     </div>
   </div>;
 };
