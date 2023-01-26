@@ -2,29 +2,79 @@ import { createReducer } from "@reduxjs/toolkit";
 
 const initialstate = {};
 export const productReducer = createReducer(initialstate, {
-  getproductRequest: (state) => {
+  getProductdataRequest: (state) => {
     state.loading = true;
   },
-  getproductSuccess: (state, action) => {
+  getProductdataSuccess: (state, action) => {
     state.loading = false;
     state.Products = action.payload;
     state.FilterProducts = action.payload;
   },
-  getproductFail: (state, action) => {
+  getProductdataFaild: (state, action) => {
     state.loading = true;
     state.error = action.payload;
   },
   // single product get 
-  getproductRequestdetails: (state) => {
+  getproductdetailsRequest: (state) => {
     state.loading = true;
   },
-  getproductSuccessdetails: (state, action) => {
+  getproductdetailsSuccess: (state, action) => {
     state.loading = false;
     state.Product = action.payload;
   },
-  getproductFaildetails: (state, action) => {
+  getproductdetailsFaild: (state, action) => {
     state.loading = true;
     state.error = action.payload;
+  },
+  // filter price here 
+  setFilterPriceRequest: (state) => {
+    state.loading = true
+  },
+  setFilterPriceSuccess: (state, action) => {
+    state.loading = false
+    state.Products = action.payload
+  },
+  setFilterPriceFaild: (state, action) => {
+    state.loading = false
+    state.error = action.payload
+  },
+  // filterDiscount here 
+  filterDiscountRequest: (state) => {
+    state.loading = true
+  },
+  filterDiscountSuccess: (state, action) => {
+    state.loading = false
+    state.Products = action.payload
+  },
+  filterDiscountFaild: (state, action) => {
+    state.loading = false
+    state.error = action.payload
+  },
+
+  // setFiltersubCategory here 
+  setFiltersubCategoryRequest: (state) => {
+    state.loading = true
+  },
+  setFiltersubCategorySuccess: (state, action) => {
+    state.loading = false
+    state.Products = action.payload
+  },
+  setFiltersubCategoryFaild: (state, action) => {
+    state.loading = false
+    state.error = action.payload
+  },
+
+  // SortByprice here 
+  SortBypriceRequest: (state) => {
+    state.loading = true
+  },
+  SortBypriceSuccess: (state, action) => {
+    state.loading = false
+    state.Products = action.payload
+  },
+  SortBypriceFaild: (state, action) => {
+    state.loading = false
+    state.error = action.payload
   },
 
   // add to cart product 
