@@ -44,7 +44,7 @@ const Sidebar = ({ SortingProduct, discountPrice,necktype,patterntype,sleevetype
             </div> : null
           }
         </div>
-        <div className={sidebarcss.metrial}>
+        {/* <div className={sidebarcss.metrial}>
           <div className={sidebarcss.barheader} onClick={() => sideExpandHandler("necktype")}>
             <p>Neck Type</p>
             <p>{temp ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
@@ -98,7 +98,7 @@ const Sidebar = ({ SortingProduct, discountPrice,necktype,patterntype,sleevetype
 
             </div> : null
           }
-        </div>
+        </div> */}
       </div>
     </div>
   )

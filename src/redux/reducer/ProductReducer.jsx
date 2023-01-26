@@ -19,7 +19,7 @@ export const productReducer = createReducer(initialstate, {
     state.loading = true;
   },
   getproductSuccessdetails: (state, action) => {
-    state.loading = true;
+    state.loading = false;
     state.Product = action.payload;
   },
   getproductFaildetails: (state, action) => {
@@ -32,7 +32,7 @@ export const productReducer = createReducer(initialstate, {
     state.loading = true;
   },
   addCartSuccess: (state, action) => {
-    state.loading = true;
+    state.loading = false;
     state.CartProduct = action.payload;
   },
   addCartFaild: (state, action) => {

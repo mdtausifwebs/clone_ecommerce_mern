@@ -6,34 +6,39 @@ import Sidebar from "./Sidebar"
 import { useEffect, useState } from "react";
 import Product from "./Product";
 import { useSelector } from "react-redux"
-import { setFilterPrice, getProductdata, filterDiscount, setFiltersubCategory } from "../../redux/action/ProductAction"
+import { setFilterPrice, getProductdata, filterDiscount, setFiltersubCategory, SortByprice } from "../../redux/action/ProductAction"
 const ProductCategory = () => {
   const { FilterProducts, loading } = useSelector((state) => state?.Products);
   // console.log(Products,FilterProducts)
   const dispatch = useDispatch();
   const category = useParams().category
-  const [currentpage, setCurrentpage] = useState(1)
-  const [perPageSize] = useState(10)
-  const pagesize = (text) => {
+  const [page, setpage] = useState(1)
+  const [size] = useState(10)
+  const pagesizeHandler = (text) => {
     if (text === "Pre") {
-      setCurrentpage(currentpage - 1)
+      setpage(page - 1)
     } else {
-      setCurrentpage(currentpage + 1)
+      setpage(page + 1)
     }
   }
   // console.log(category)
   useEffect(() => {
-    dispatch(getProductdata({ page: currentpage, category, size: perPageSize }));
-  }, [category, dispatch, currentpage, perPageSize]);
-  const SortingProduct = (price) => {
-    dispatch(setFilterPrice({ page: currentpage, price, category, size: perPageSize }))
+    dispatch(getProductdata({ category, page, size }));
+  }, [category, dispatch, size, page]);
+
+  const SortingProduct = async (price) => {
+    await dispatch(setFilterPrice({ category, price, page, size }))
   }
+
   const discountPrice = async (discount) => {
-    await dispatch(filterDiscount({ page: currentpage, discount, category, size: perPageSize }))
+    await dispatch(filterDiscount({ category, discount, page, size }))
   }
+
   const necktype = async (subcategory) => {
-    await dispatch(setFiltersubCategory({ page: currentpage, subcategory, category, size: perPageSize }))
+    await dispatch(setFiltersubCategory({ category, subcategory, page, size }))
+    console.log({ size, category, subcategory })
   }
+
   const patterntype = (text) => {
     // let patterndata = Products.filter((item) => {
     //   return item.pattern === text
@@ -50,28 +55,15 @@ const ProductCategory = () => {
     // dispatch(setFilterProducts(sleevedata))
     // console.log("sleevedata", sleevedata)
   }
-  const SortingHandler = (sortingType) => {
-    // if (sortingType === "lowtohigh") {
-    //   const SortArr = [...Products
-    //   ].sort((a, b) => {
-    //     return a.selling_price - b.selling_price
-    //   })
-    //   dispatch(setFilterProducts(SortArr))
-    //   console.log("SortArr", SortArr)
-    // } else if (sortingType === "hightolow") {
-    //   const SortArr = [...Products
-    //   ].sort((a, b) => {
-    //     return b.selling_price - a.selling_price
-    //   })
-    //   dispatch(setFilterProducts(SortArr))
-    //   console.log("SortArr", SortArr)
-    // }
+  const SortingHandler = async (sortType) => {
+    console.log(category, sortType, page, size)
+    await dispatch(SortByprice({ category, sortType, page, size }))
   }
 
   return <div className={productcatecss.container}>
     <div className={productcatecss.box}>
       <Sidebar SortingProduct={SortingProduct} discountPrice={discountPrice} necktype={necktype} patterntype={patterntype} sleevetype={sleevetype} />
-      <Product FilterProducts={FilterProducts} loading={loading} pagesize={pagesize} currentpage={currentpage} setCurrentpage={setCurrentpage} SortingHandler={SortingHandler} />
+      <Product FilterProducts={FilterProducts} loading={loading} page={page} pagesizeHandler={pagesizeHandler} SortingHandler={SortingHandler} />
     </div>
   </div>;
 };

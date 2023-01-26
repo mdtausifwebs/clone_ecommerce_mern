@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import Home from "./components/Home/Home";
 import ProductCategory from "./components/Products/ProductCategory";
@@ -24,7 +23,6 @@ const App = () => {
           <Route path="/category/:category" element={<ProductCategory />} />
           <Route path="/product/:id" element={<Details />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/category/cart" element={<Cart />} />
           <Route path="/buynow" element={<BuyNow />} />
         </Routes>

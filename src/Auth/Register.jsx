@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { Registeruser,GoogleRegister } from "../redux/action/UserAction";
 import { GoogleLogin } from "@react-oauth/google"
 import jwtDecode from "jwt-decode"
@@ -53,7 +53,6 @@ const Register = () => {
         </div>
         <div>
           <button onClick={submit}>Register</button>
-          <button><Link to="/Login">Login</Link></button>
         </div>
         <div>
           <GoogleLogin onSuccess={LogSuccess} onError={LogError} />
