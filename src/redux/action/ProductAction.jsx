@@ -70,26 +70,26 @@ export const filterDiscount = (body) => async (dispatch) => {
   });
 }
 export const setFiltersubCategory = (body) => async (dispatch) => {
+  // let { data } = await axios.get(
+  //   `http://localhost:4000/api/v1/products/filtersubcategory?category=${body.category}&discount=${body.subcategory}&size=${body.size}&page=${body.page}`
+  // );
   let { data } = await axios.get(
-    `http://localhost:4000/api/v1/products/filtersubcategory?category=${body.category}&discount=${body.subcategory}&size=${body.size}&page=${body.page}`
+    `https://bright-cap-deer.cyclic.app/api/v1/products/filtersubcategory?category=${body.category}&discount=${body.subcategory}&size=${body.size}&page=${body.page}`
   );
   console.log("action", data)
-  // let { data } = await axios.get(
-  //   `https://bright-cap-deer.cyclic.app/api/v1/products/filterPrice?sort=${body.text}&size=${body.size}&page=${body.page}`
-  // );
   dispatch({
     type: "setFilterProducts",
     payload: data.products
   });
 }
 export const SortByprice = (body) => async (dispatch) => {
+  // let { data } = await axios.get(
+  //   `http://localhost:4000/api/v1/products/sortbyprice?category=${body.category}&price=${body.sortType}&size=${body.size}&page=${body.page}`
+  // );
   let { data } = await axios.get(
-    `http://localhost:4000/api/v1/products/sortbyprice?category=${body.category}&price=${body.sortType}&size=${body.size}&page=${body.page}`
+    `https://bright-cap-deer.cyclic.app/api/v1/products/sortbyprice?category=${body.category}&price=${body.sortType}&size=${body.size}&page=${body.page}`
   );
   console.log("action", data)
-  // let { data } = await axios.get(
-  //   `https://bright-cap-deer.cyclic.app/api/v1/products/filterPrice?sort=${body.text}&size=${body.size}&page=${body.page}`
-  // );
   dispatch({
     type: "setFilterProducts",
     payload: data.products
@@ -122,7 +122,6 @@ export const addToCart = (cartProduct) => async (dispatch) => {
       }
     }
     localStorage.setItem("cart", JSON.stringify(localdata))
-
     // console.log("localdata",localdata)
     dispatch({
       type: "addCartSuccess",
