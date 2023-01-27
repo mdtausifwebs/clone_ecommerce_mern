@@ -8,7 +8,7 @@
   justify-content: center;
   margin: 1rem;
 }
-.box img{
+.box img {
   max-width: 98%;
   max-height: 90%;
 }
@@ -28,14 +28,19 @@
   font-size: 4rem;
   cursor: pointer;
 }
-.box:hover svg{
-    display: flex;
-    color: rgb(129, 129, 129);
-    
-}
-@media only screen and (max-width: 600px) {
-img{
-  width: 100%;
+.box:hover svg {
+  display: flex;
+  color: rgb(129, 129, 129);
 }
 
+@media only screen and (max-width: 400px) {
+  img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 800px) {
+}
+@media only screen and (max-width: 1000px) {
 }

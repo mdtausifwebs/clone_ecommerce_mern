@@ -9,7 +9,7 @@ import { useSelector } from "react-redux"
 import { setFilterPrice, getProductdata, filterDiscount, setFiltersubCategory, SortByprice } from "../../redux/action/ProductAction"
 const ProductCategory = () => {
   const { Products, loading } = useSelector((state) => state?.Products);
-  console.log(Products)
+  // console.log(Products)
   const dispatch = useDispatch();
   const category = useParams().category
   const [page, setpage] = useState(1)
@@ -36,24 +36,14 @@ const ProductCategory = () => {
 
   const necktype = async (subcategory) => {
     await dispatch(setFiltersubCategory({ category, subcategory, page, size }))
-    console.log({ size, category, subcategory })
+    // console.log({ size, category, subcategory })
   }
 
   const patterntype = (text) => {
-    // let patterndata = Products.filter((item) => {
-    //   return item.pattern === text
-    //   // console.log(item.pattern)
-    // })
-    // dispatch(setProducts(patterndata))
-    // console.log("patterndata", patterndata)
+    console.log(text)
   }
   const sleevetype = (text) => {
-    // let sleevedata = Products.filter((item) => {
-    //   return item.sleeve === text
-    //   // console.log(item.sleeve)
-    // })
-    // dispatch(setProducts(sleevedata))
-    // console.log("sleevedata", sleevedata)
+    console.log(text)
   }
   const SortingHandler = async (sortType) => {
     console.log(category, sortType, page, size)
@@ -62,7 +52,7 @@ const ProductCategory = () => {
 
   return <div className={productcatecss.container}>
     <div className={productcatecss.box}>
-      <Sidebar SortingProduct={SortingProduct} discountPrice={discountPrice} necktype={necktype} patterntype={patterntype} sleevetype={sleevetype} />
+      <Sidebar className={productcatecss.sidebar} SortingProduct={SortingProduct} Products={Products} discountPrice={discountPrice} necktype={necktype} patterntype={patterntype} sleevetype={sleevetype} />
       <Product Products={Products} loading={loading} page={page} pagesizeHandler={pagesizeHandler} SortingHandler={SortingHandler} />
     </div>
   </div>;

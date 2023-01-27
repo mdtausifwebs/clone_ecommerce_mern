@@ -73,3 +73,18 @@
     color: white;
     background-color: rgb(202, 199, 199);
 }
+
+@media only screen and (max-width: 400px) {
+  .productBox{
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 800px) {
+}
+@media only screen and (max-width: 1000px) {
+}

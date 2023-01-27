@@ -7,10 +7,7 @@ import { BsCart } from "react-icons/bs"
 import { BsSearch } from "react-icons/bs"
 import { useDispatch } from "react-redux";
 import { SearchAction } from "../../redux/action/ProductAction"
-
 import { Menu, MenuItem } from "@mui/material"
-
-
 const Navbar = () => {
   const dispatch = useDispatch()
   const SearchHandlar = async (search) => {

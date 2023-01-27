@@ -11,6 +11,7 @@ export const getProductdata = (body) => async (dispatch) => {
     let { data } = await axios.get(
       `https://bright-cap-deer.cyclic.app/api/v1/products?category=${body.category}&size=${body.size}&page=${body.page}`
     );
+    // console.log(data)
     dispatch({
       type: "getProductdataSuccess",
       payload: data.products,

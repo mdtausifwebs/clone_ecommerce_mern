@@ -2,7 +2,7 @@ import React from 'react'
 import sidebarcss from "../../styles/product/sidebar.module.css"
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti"
 import { useState } from 'react'
-const Sidebar = ({ SortingProduct, discountPrice,necktype,patterntype,sleevetype }) => {
+const Sidebar = ({ SortingProduct,Products, discountPrice,necktype,patterntype,sleevetype }) => {
   const [temp, setTemp] = useState(false)
   const [val, setval] = useState("")
   const sideExpandHandler = (text) => {
@@ -11,6 +11,9 @@ const Sidebar = ({ SortingProduct, discountPrice,necktype,patterntype,sleevetype
   }
   return (
     <div className={sidebarcss.container}>
+      {
+        // console.log("Products",Object.keys(Products[0]))
+      }
       <div className={sidebarcss.box}>
         <div className={sidebarcss.price}>
           <div className={sidebarcss.barheader} onClick={() => sideExpandHandler("price")}>
@@ -94,8 +97,6 @@ const Sidebar = ({ SortingProduct, discountPrice,necktype,patterntype,sleevetype
               <div onClick={()=>{patterntype("Solid")}}>Solid</div>
               <div onClick={()=>{patterntype("Ornamental")}}>Ornamental</div>
               <div onClick={()=>{patterntype("Block Print")}}>Block Print</div>
-
-
             </div> : null
           }
         </div> */}
