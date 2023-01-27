@@ -5,56 +5,40 @@ a {
   width: 100%;
 }
 .childContainer {
-  width: 99%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
-.slideSec {
-  width: 100%;
-}
 .categoryImeParent {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .categoryIme {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-.box,.categoruimagebox {
-  width: 16%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.categoruimagebox img{
-  width: 100%;
+.box {
+  width: 24%;
+  position: relative;
 }
 .box p {
-  font-family: sans-serif;
-  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
   font-size: 1rem;
-}
-.box img {
-  width: 90%;
-}
-.categoryimg {
   width: 100%;
-  display: flex;
-  /* border: 1px solid black; */
-  justify-content: space-around;
-  align-items: center;
+  text-align: center;
+  color: blue;
 }
-.categoryimg .box {
-  width: 25%;
+
+.box img {
+  width: 100%;
+  aspect-ratio: 0.8;
 }
+
 .bigimg {
   width: 100%;
   display: flex;
@@ -71,54 +55,41 @@ a {
 .bigimg a img {
   width: 100%;
 }
-@media only screen and (max-width: 600px) {
-  .conatiner {
+
+@media screen and (max-width: 992px){
+  .box {
+    width: 24%;
+  }
+  .box img {
     width: 100%;
-    /* border: 1px solid red; */
+    aspect-ratio: 0.8;
   }
-  .childContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
+}
+@media screen and (max-width: 800px){
+  .box {
+    width: 49%;
   }
-  .categoryImeParent {
+  .box img {
     width: 100%;
-  }
-  .box{
-    width: 50%;
-  }
-  .categoryIme {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .categoryimg {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    /* border: 1px solid black; */
-  }
-  .categoruimagebox{
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
-    justify-content: center;
-  }
-  .categoruimagebox img{
-    width: 50%;
+    aspect-ratio: 0.8;
   }
 }
 
-@media only screen and (max-width: 400px) {
-    
+@media screen and (max-width: 600px){
+  .box {
+    width: 49%;
+  }
+  .box img {
+    width: 100%;
+    aspect-ratio: 0.8;
+  }
 }
-@media only screen and (max-width: 600px) {
-}
-@media only screen and (max-width: 800px) {
-  
-}
-@media only screen and (max-width: 1000px) {
-  
+@media screen and (max-width:400px) {
+  .box {
+    width: 100%;
+  }
+  .box img {
+    width: 100%;
+    aspect-ratio: 0.8;
+  }
 }

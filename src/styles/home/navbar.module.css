@@ -1,14 +1,27 @@
-
-
-.container{
-  border: 2px solid red;
+.container {
+  /* border: 2px solid red; */
+  width: 100%;
 }
-
-
+.childContainer{
+  width: 100%;
+}
+.logoSec a{
+  width: 100%;
+}
+.logoSec a img{
+  width: 10%;
+}
 .popup {
   display: none;
 }
 @media only screen and (max-width: 400px) {
+  .childContainer {
+    width: 100%;
+    display: flex;
+  }
+  .logoSec{
+    width: 10%;
+  }
   .manuSec {
     display: none;
   }

@@ -16,7 +16,7 @@
             "imageurl": "https://wforwoman.gumlet.io/commonsection/1654667187W-Plus-Footer-desktop.jpg"
         },
         {
-            "text": "FOLKSONG",
+            "text": "FOLK SONG",
             "url": "folksong-topwear",
             "imageurl": "https://wforwoman.gumlet.io/commonsection/1648195461FolkSong-Footer-banner-desktop.jpg"
         },
@@ -28,55 +28,45 @@
     ],
     "categoryurl": [
         {
-            "text": "Top Wear",
+            "text": "TOP WEAR",
             "url": "Top Wear",
             "imageurl": "https://wforwoman.gumlet.io/product/22FESP10754-216769/665/22FESP10754-216769_1.JPG"
         },
         {
-            "text": "top-wear",
+            "text": "TOP WEAR",
             "url": "top-wear",
             "imageurl": "https://wforwoman.gumlet.io/product/22FEW17326-118119/665/22FEW17326-118119_1.JPG"
         },
         {
-            "text": "bottom-wear",
+            "text": "BOTTOM WEAR",
             "url": "Bottom Wear",
             "imageurl": "https://wforwoman.gumlet.io/product/22FEW61876-217013/665/22FEW61876-217013_5.JPG"
         },
         {
-            "text": "topwear-plus-size",
+            "text": " TOP WEAR PLUS SIZE",
             "url": "topwear-plus-size",
             "imageurl": "https://wforwoman.gumlet.io/product/21AUW14029-311668/300/21AUW14029-311668_1.JPG"
-        },
-        {
-            "text": "w-aikat",
-            "url": "w-aikat",
-            "imageurl": "https://wforwomanonline.gumlet.io/product/22AUW19326-121479/665/22AUW19326-121479_4.jpg"
-        },
-        {
-            "text": "top-wear-sets-dresses",
-            "url": "top-wear-sets-dresses",
-            "imageurl": "https://wforwoman.gumlet.io/product/22FEWS17485-117935/665/22FEWS17485-117935_1.JPG"
         }
     ],
-    "categoryimg":[
+    "categoryimg": [
         {
-            "text": "topwear-plus-size",
+            "text": " TOP WEAR PLUS SIZE",
             "url": "Plus Size",
             "imageurl": "https://wforwoman.gumlet.io/product/22FEW17477-117938/665/22FEW17477-117938_3.JPG"
         },
         {
-            "text": "bottom-wear-skirt",
+            "text": "BOTTOM WEAR SKIRTS",
             "url": "bottom-wear-skirt",
             "imageurl": "https://wforwoman.gumlet.io/product/23FEWS19419-121113/665/23FEWS19419-121113_4.jpg"
         },
         {
-            "text": "w-cosmetics",
+            "text": " COSMETICS",
             "url": "w-cosmetics",
             "imageurl": "https://wforwoman.gumlet.io/product/BAWPML05RL007/665/BAWPML05RL007_7.jpg"
         },
         {
-            "text": "footwear-wedges",
-            "url": "footwear-wedges",
+            "text": "FOOT WEAR WEDGES",
+            "url": "footwear-wedges ",
             "imageurl": "https://wforwoman.gumlet.io/product/20FEW93050-43089/300/20FEW93050-43089_1.JPG"
         }
     ]
