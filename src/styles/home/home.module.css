@@ -1,4 +1,4 @@
-a{
+a {
   text-decoration: none;
 }
 .conatiner {
@@ -27,46 +27,86 @@ a{
   justify-content: center;
   align-items: center;
 }
-.box{
-    width:16%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.box,.categoruimagebox {
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.box p{
-    font-family: sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-
+.categoruimagebox img{
+  width: 100%;
 }
-.box img{
-    width: 90%;
+.box p {
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
 }
-.categoryimg{
-    width: 100%;
-    display: flex;
-    /* border: 1px solid black; */
-    justify-content: space-around;
-    align-items: center;
+.box img {
+  width: 90%;
 }
-.categoryimg .box{
-    width: 25%;
+.categoryimg {
+  width: 100%;
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: space-around;
+  align-items: center;
 }
-.bigimg{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid black; */
+.categoryimg .box {
+  width: 25%;
+}
+.bigimg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
 }
 .bigimg a {
-    width:100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .bigimg a img {
-    width:100%;
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .conatiner {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  .childContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .categoryImeParent {
+    width: 100%;
+  }
+  .box{
+    width: 50%;
+  }
+  .categoryIme {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .categoryimg {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 1px solid black; */
+  }
+  .categoruimagebox{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: center;
+  }
+  .categoruimagebox img{
+    width: 50%;
+  }
 }

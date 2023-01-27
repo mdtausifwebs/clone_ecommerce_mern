@@ -32,7 +32,7 @@ const Home = () => {
           <div className={homecss.categoryimg}>
             {data?.categoryimg?.map((item, i) => {
               return (
-                <Link key={i} to={`/category/${item.url}`} className={homecss.box}>
+                <Link key={i} to={`/category/${item.url}`} className={homecss.categoruimagebox}>
                   <img src={item.imageurl} alt="" />
                   <p>{item.text}</p>
                 </Link>

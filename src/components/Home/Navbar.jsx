@@ -7,12 +7,23 @@ import { BsCart } from "react-icons/bs"
 import { BsSearch } from "react-icons/bs"
 import { useDispatch } from "react-redux";
 import { SearchAction } from "../../redux/action/ProductAction"
+
+import { Menu, MenuItem } from "@mui/material"
+
+
 const Navbar = () => {
   const dispatch = useDispatch()
-
   const SearchHandlar = async (search) => {
     await dispatch(SearchAction(JSON.stringify({ input: search })))
   }
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <div className={navbarcss.container}>
       <div className={navbarcss.childContainer}>
@@ -21,7 +32,15 @@ const Navbar = () => {
             <i className="fa fa-bars"></i>
           </div>
           <div className={navbarcss.logo}>
-            <Link to="/">
+            <Link to="/"
+              id="basic-demo-button"
+              aria-controls={open ? 'basic-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              variant="outlined"
+              color="neutral"
+              onClick={handleClick}
+            >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCHVUsMiOn-wVfTcsR0AdT8vA8UPJyao32oqpNgadbTFQbwap2fgSir1rUVbWHrtqm0Dw&usqp=CAU"
                 alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCHVUsMiOn-wVfTcsR0AdT8vA8UPJyao32oqpNgadbTFQbwap2fgSir1rUVbWHrtqm0Dw&usqp=CAU"
@@ -30,56 +49,63 @@ const Navbar = () => {
           </div>
         </div>
         <div className={navbarcss.manuSec}>
-          <div className={navbarcss.manuchild}>
-            <Link to="/category/Now Trending">
-              <span>NEW LAUNCH</span>
-            </Link>
-          </div>
-          <div className={navbarcss.manuchild}>
-            <span className={navbarcss.hovertopwear}>
-              <Link to={"/category/Top Wear"}>TOP WEAR</Link>
-            </span>
-          </div>
-          <div className={navbarcss.manuchild}>
-            <Link to="/category/Bottom Wear">
-              <span>BOTTOM WEAR</span>
-            </Link>
-          </div>
-          <div className={navbarcss.manuchild}>
-            <Link to="/category/Cosmetics">
-              <span>COSMETIC</span>
-            </Link>
-           
-          </div>
-          <div className={navbarcss.manuchild}>
-            <Link to="/category/Footwear">
-              <span>FOOTWEAR</span>
-            </Link>
-          
-          </div>
-          <div className={navbarcss.manuchild}>
-            <Link to="/category/Jewellery">
-              <span>JEWELLERY</span>
-            </Link>
-          </div>
-          <div className={navbarcss.manuchild}>
-            <Link to="/category/Drapes">
-              <span>DRAPES</span>
-            </Link>
-          
-          </div>
-          <div className={navbarcss.manuchild}>
-            <Link to="/category/Stories by W">
-              <span>WISHFUL</span>
-            </Link>
-           
-          </div>
-          <div className={navbarcss.manuchild}>
-            <Link to="/category/Plus Size">
-              <span>PLUS SIZE</span>
-            </Link>
-          </div>
-        
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="basic-demo-button"
+          >
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <Link to="/category/Now Trending">
+                <span>NEW LAUNCH</span>
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <span className={navbarcss.hovertopwear}>
+                <Link to={"/category/Top Wear"}>TOP WEAR</Link>
+              </span>
+            </MenuItem>
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <Link to="/category/Bottom Wear">
+                <span>BOTTOM WEAR</span>
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <Link to="/category/Cosmetics">
+                <span>COSMETIC</span>
+              </Link>
+
+            </MenuItem>
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <Link to="/category/Footwear">
+                <span>FOOTWEAR</span>
+              </Link>
+
+            </MenuItem>
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <Link to="/category/Jewellery">
+                <span>JEWELLERY</span>
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <Link to="/category/Drapes">
+                <span>DRAPES</span>
+              </Link>
+
+            </MenuItem>
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <Link to="/category/Stories by W">
+                <span>WISHFUL</span>
+              </Link>
+
+            </MenuItem>
+            <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
+              <Link to="/category/Plus Size">
+                <span>PLUS SIZE</span>
+              </Link>
+            </MenuItem>
+          </Menu>
         </div>
         <div className={navbarcss.searchSec}>
           <input type="text" placeholder="Search here" onChange={(e) => SearchHandlar(e.target.value)} />
