@@ -8,6 +8,7 @@ import { BsSearch } from "react-icons/bs"
 import { useDispatch } from "react-redux";
 import { SearchAction } from "../../redux/action/ProductAction"
 import { Menu, MenuItem } from "@mui/material"
+import MenuIcon from '@mui/icons-material/Menu';
 const Navbar = () => {
   const dispatch = useDispatch()
   const SearchHandlar = async (search) => {
@@ -30,13 +31,7 @@ const Navbar = () => {
           </div>
           <div className={navbarcss.logo}>
             <Link to="/"
-              id="basic-demo-button"
-              aria-controls={open ? 'basic-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              variant="outlined"
-              color="neutral"
-              onClick={handleClick}
+
             >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCHVUsMiOn-wVfTcsR0AdT8vA8UPJyao32oqpNgadbTFQbwap2fgSir1rUVbWHrtqm0Dw&usqp=CAU"
@@ -46,6 +41,44 @@ const Navbar = () => {
           </div>
         </div>
         <div className={navbarcss.manuSec}>
+          <Link to="/category/Now Trending">
+            <span>NEW LAUNCH</span>
+          </Link>
+          <span className={navbarcss.hovertopwear}>
+            <Link to={"/category/Top Wear"}>TOP WEAR</Link>
+          </span>
+          <Link to="/category/Bottom Wear">
+            <span>BOTTOM WEAR</span>
+          </Link>
+          <Link to="/category/Cosmetics">
+            <span>COSMETIC</span>
+          </Link>
+          <Link to="/category/Footwear">
+            <span>FOOTWEAR</span>
+          </Link>
+          <Link to="/category/Jewellery">
+            <span>JEWELLERY</span>
+          </Link>
+          <Link to="/category/Drapes">
+            <span>DRAPES</span>
+          </Link>
+          <Link to="/category/Stories by W">
+            <span>WISHFUL</span>
+          </Link>
+          <Link to="/category/Plus Size">
+            <span>PLUS SIZE</span>
+          </Link>
+        </div>
+        <div className={navbarcss.popup}>
+          <MenuIcon
+            id="basic-demo-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            variant="outlined"
+            color="neutral"
+            onClick={handleClick}
+          />
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}
@@ -89,7 +122,6 @@ const Navbar = () => {
               <Link to="/category/Drapes">
                 <span>DRAPES</span>
               </Link>
-
             </MenuItem>
             <MenuItem onClick={handleClose} className={navbarcss.manuchild}>
               <Link to="/category/Stories by W">
