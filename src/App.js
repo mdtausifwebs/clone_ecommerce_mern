@@ -4,7 +4,7 @@ import Register from "./Auth/Register";
 import Home from "./components/Home/Home";
 import ProductCategory from "./components/Products/ProductCategory";
 import Navbar from "./components/Home/Navbar";
-import Footer from "./components/Home/Footer";
+import Footer from "./components/Footer/Footer";
 import Details from "./components/Products/Details";
 import Cart from "./components/Products/Cart";
 import BuyNow from "./components/Products/BuyNow";
@@ -20,8 +20,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/category/:category" element={<ProductCategory />} />
           <Route path="/product/:id" element={<Details />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/category/cart" element={<Cart />} />
+          <Route path="/login" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/buynow" element={<BuyNow />} />
         </Routes> 
          <Footer />

@@ -1,37 +1,36 @@
-.container {
-  /* border: 2px solid red; */
-  width: 100%;
+.laptopMenu {
+  display: flex;
+  justify-content: space-between;
+  gap: 1;
 }
-.childContainer{
-  width: 100%;
+.laptopMenu p {
+  padding: 10px;
 }
-.logoSec a{
-  width: 100%;
-}
-.logoSec a img{
-  width: 10%;
-}
-.popup {
-  display: none;
+.manuchild a {
+  font-size: 0.8rem;
+  color: white;
 }
 @media only screen and (max-width: 400px) {
-  .childContainer {
-    width: 100%;
-    display: flex;
-  }
-  .logoSec{
-    width: 10%;
-  }
-  .manuSec {
-    display: none;
-  }
-  .popup {
-    display: flex;
+  .manuchild a {
+    font-size: 0.8rem;
+    color: black;
   }
 }
 @media only screen and (max-width: 600px) {
+  .manuchild a {
+    font-size: 0.8rem;
+    color: black;
+  }
 }
 @media only screen and (max-width: 800px) {
+  .manuchild a {
+    font-size: 0.8rem;
+    color: black;
+  }
 }
 @media only screen and (max-width: 1000px) {
+  .manuchild a {
+    font-size: 0.8rem;
+    color: white;
+  }
 }

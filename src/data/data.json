@@ -6,23 +6,23 @@
     ],
     "categoryurlbig": [
         {
-            "text": "TRENDING NOW",
-            "url": "Top Wear",
+            "text": "Now Trending",
+            "url": "Now Trending",
             "imageurl": "https://wforwoman.gumlet.io/commonsection/1653036982W-Footwear-Footer-desktop.jpg"
         },
         {
-            "text": "CATEGORY TO BAG",
-            "url": "footwear",
+            "text": "Top Wear",
+            "url": "Top Wear",
             "imageurl": "https://wforwoman.gumlet.io/commonsection/1654667187W-Plus-Footer-desktop.jpg"
         },
         {
-            "text": "FOLK SONG",
-            "url": "folksong-topwear",
+            "text": "Bottom Wear",
+            "url": "Bottom Wear",
             "imageurl": "https://wforwoman.gumlet.io/commonsection/1648195461FolkSong-Footer-banner-desktop.jpg"
         },
         {
             "text": "W BEAUTY",
-            "url": "w-cosmetics",
+            "url": "Cosmetics",
             "imageurl": "https://wforwoman.gumlet.io/commonsection/1654861163W_BEAUTY-Footer.jpg"
         }
     ],

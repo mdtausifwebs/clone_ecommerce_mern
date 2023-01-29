@@ -21,7 +21,7 @@ const Home = () => {
           </div>
         </div>
         <div className={homecss.bigimg}>
-          <Link to={`/category/`}>
+          <Link to={`/category/${data?.categoryurlbig[2].url}`}>
             <img src={data?.categoryurlbig[2].imageurl} alt="" />
             <p>{data?.categoryurlbig[2].text}</p>
           </Link>
@@ -39,7 +39,7 @@ const Home = () => {
           </div>
         </div>
         <div className={homecss.bigimg}>
-          <Link to={`/category/`}>
+          <Link to={`/category/${data?.categoryurlbig[1].url}`}>
             <img src={data?.categoryurlbig[1].imageurl} alt="" />
             <p>{data?.categoryurlbig[1].text}</p>
           </Link>
