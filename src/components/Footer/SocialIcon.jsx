@@ -10,7 +10,7 @@ const SocialIcon = () => {
     return (
         <Box sx={{ width: "100%", textAlign: "center", color: "white" }}>
             <Typography>Social Icons</Typography>
-            <Box sx={{ display: "flex", justifyContent: "space-between", width: "50%", margin: "auto" }}>
+            <Box sx={{ display: "flex",padding:"1rem", justifyContent: "space-between", width: "50%", margin: "auto" }}>
                 <InstagramIcon />
                 <FacebookIcon />
                 <LinkedInIcon />
